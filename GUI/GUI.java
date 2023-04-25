@@ -2,6 +2,13 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
+
+
+class GUI{
+  GUI(){
+
+  }
+}
 public class GUI
 {
 	private static void createAndShowGUI()
