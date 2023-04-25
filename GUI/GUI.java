@@ -28,27 +28,37 @@ public class GUI
 		//Adding the panel to the content pane of the JFrame
 
 		frame.getContentPane().add(myPanel);
-		
+
 		//Creating a menu bar
 
 		JMenuBar blueMenuBar = new JMenuBar();
 		blueMenuBar.setOpaque(true);
 		blueMenuBar.setBackground(new Color(166,231,100));
 		blueMenuBar.setPreferredSize(new Dimension(200,40));
-
+		
+		//JLabel
 		//Creating a purple Label to put in the content pane
 
-//		JLabel purpleLabel = new JLabel();
-//		purpleLabel.setOpaque(true);
-//		purpleLabel.setBackground(new Color(100,231,100));
-//		purpleLabel.setPreferredSize(new Dimension(200,180));
+		//		JLabel purpleLabel = new JLabel();
+		//		purpleLabel.setOpaque(true);
+		//		purpleLabel.setBackground(new Color(100,231,100));
+		//		purpleLabel.setPreferredSize(new Dimension(200,180));
 
 		//Setting the menu bar and adding the label to the content pane
 
 		frame.setJMenuBar (blueMenuBar);
-//		frame.getContentPane().add(purpleLabel, BorderLayout.CENTER);
+		//		frame.getContentPane().add(purpleLabel, BorderLayout.CENTER);
 
-		//Displaying the window.
+		// Create the JPanel for the menu bar
+		JPanel menuBarPanel = new JPanel();
+		
+		// Adding text to the menu bar
+
+		JLabel menutext = new JLabel("SPORTS VENUE BOOKING");
+		menutext.setHorizontalAlignment(SwingConstants.CENTER);
+		menuBarPanel.add(menutext);
+		
+		frame.getContentPane().add(menuBarPanel);
 
 		frame.pack();
 		frame.setVisible(true);
