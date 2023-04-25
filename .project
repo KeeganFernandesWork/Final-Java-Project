@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Final-Java-Project</name>
+	<name>Sports Venue Event</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -14,4 +14,16 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/gui/image.jpg</name>
+			<type>1</type>
+			<location>C:/Users/Anujit/Desktop/Java_Project/Final-Java-Project/GUI/image.jpg</location>
+		</link>
+		<link>
+			<name>src/gui/image1.jpg</name>
+			<type>1</type>
+			<location>C:/Users/Anujit/Desktop/Java_Project/Final-Java-Project/GUI/image1.jpg</location>
+		</link>
+	</linkedResources>
 </projectDescription>
