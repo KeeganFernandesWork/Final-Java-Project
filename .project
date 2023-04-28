@@ -30,5 +30,10 @@
 			<type>1</type>
 			<location>C:/Users/Anujit/Downloads/pexels-tom-fisk-3448250.jpg</location>
 		</link>
+		<link>
+			<name>src/pack/sports1.jpg</name>
+			<type>1</type>
+			<location>C:/Users/Anujit/Downloads/sports1.jpg</location>
+		</link>
 	</linkedResources>
 </projectDescription>
