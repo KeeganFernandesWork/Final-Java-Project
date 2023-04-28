@@ -139,7 +139,8 @@ public class Login extends JFrame {
 		
 		//Don't do this, create a new swing application window, for pop-up, and then call it in your button , ovveriding the class
 		// in that way, you can deactivate the exit on close(just comment it out), so when you close your frame, all the frames 
-		// don't close along with it.
+		// don't close along with it. Remember that you can only change the variables that you get from the user through imput, but 
+		// a single frame will carry with it, it's characteristics, like it ability to exit on close, etc.
 		
 		
 		
