@@ -153,10 +153,10 @@ public class Newframe extends JFrame {
 		
 		//Label for Menu Bar text
 		
-		JLabel lblNewLabel_3 = new JLabel("                BookMyCourt");
+		JLabel lblNewLabel_3 = new JLabel("PLAY PRO SPORTS VENUES");
 		lblNewLabel_3.setForeground(new Color(0, 0, 0));
 		lblNewLabel_3.setFont(new Font("Monotype corsiva", Font.PLAIN, 36));
-		lblNewLabel_3.setBounds(324, 0, 735, 75);
+		lblNewLabel_3.setBounds(470, 0, 735, 75);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		panel_2.add(lblNewLabel_3);
@@ -198,18 +198,24 @@ public class Newframe extends JFrame {
 			}
 		});
 		btnNewButton_2.setToolTipText("A list of all the venues");
-		btnNewButton_2.setBounds(66, 10, 273, 132);
+		btnNewButton_2.setBounds(66, 0, 273, 132);
 		panel_3.add(btnNewButton_2);
 		
 		//Button for events list
 		
 		ImageIcon icon3 = new ImageIcon(Newframe.class.getResource("sports1.jpg"));
 		Image image3 = icon3.getImage();
-		Image new3 = image3.getScaledInstance(273, 132, java.awt.Image.SCALE_SMOOTH);
+		Image new3 = image3.getScaledInstance(273, 153, java.awt.Image.SCALE_SMOOTH);
 		ima = new ImageIcon(new3);
 		JButton btnNewButton_3 = new JButton(ima);
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				SPORTPOP sp = new SPORTPOP();
+				sp.sportz();
+			}
+		});
 		btnNewButton_3.setToolTipText("A list of all the sports events");
-		btnNewButton_3.setBounds(66,178,273,132);
+		btnNewButton_3.setBounds(66,170,273,150);
 		panel_3.add(btnNewButton_3);
 	}
 }

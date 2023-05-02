@@ -66,7 +66,7 @@ public class Login extends JFrame {
 		layeredPane.setBounds(0, 0, 1397, 685);
 		contentPane.add(layeredPane);
 		
-		//Panel for image(Layer 0)
+		//Panel for image(Layer 0)  panel
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 1407, 685);
@@ -114,8 +114,9 @@ public class Login extends JFrame {
 		lblNewLabel_4.setIcon(ima);
 		lblNewLabel_4.setBounds(21, 0, 105, 65);
 		panel_2.add(lblNewLabel_4);
+		//ending panel2
 		
-		//Making the panel 3
+		//Making the panel3
 		JPanel panel_3 = new JPanel();
 		layeredPane.setLayer(panel_3, 3);
 		panel_3.setBounds(23, 150, 1283, 366);
@@ -134,22 +135,31 @@ public class Login extends JFrame {
 		new2 = image3.getScaledInstance(273,132,java.awt.Image.SCALE_SMOOTH);
 		ima = new ImageIcon(new2);
 		JButton btnNewButton_2 = new JButton(ima);
+		
+		
+		//Don't do this, create a new swing application window, for pop-up, and then call it in your button , ovveriding the class
+		// in that way, you can deactivate the exit on close(just comment it out), so when you close your frame, all the frames 
+		// don't close along with it. Remember that you can only change the variables that you get from the user through imput, but 
+		// a single frame will carry with it, it's characteristics, like it ability to exit on close, etc.
+		
+		
+		
 		btnNewButton_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				VENUEPOP vp = new VENUEPOP();
-				vp.NewScreen();
+				//VENUEPOP vp = new VENUEPOP();
+				//vp.NewScreen();
 			}
 		});
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				//Setting up a new pop-up frame for venue button
-				VENUEPOP vp = new VENUEPOP();
-				vp.NewScreen();
+			//	VENUEPOP vp = new VENUEPOP();
+				//vp.NewScreen();
 				
-			}
-		});
+		}
+	});
 		btnNewButton_2.setToolTipText("A list of all the venues");
 		btnNewButton_2.setBounds(66, 10, 273, 132);
 		panel_3.add(btnNewButton_2);
@@ -159,8 +169,8 @@ public class Login extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				//Setting up a new pop-up frame for venue button
-				VENUEPOP vp = new VENUEPOP();
-				vp.NewScreen();
+				//VENUEPOP vp = new VENUEPOP();
+				//vp.NewScreen();
 				
 			}
 		});
@@ -173,18 +183,14 @@ public class Login extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				//Setting up a new pop-up frame for venue button
-				VENUEPOP vp = new VENUEPOP();
-				vp.NewScreen();
+				//VENUEPOP vp = new VENUEPOP();
+				//vp.NewScreen();
 				
 			}
 		});
 		btnNewButton_2.setToolTipText("A list of all the venues");
 		btnNewButton_2.setBounds(66, 10, 273, 132);
 		panel_3.add(btnNewButton_2_2);
-		
-		//Button for events list
-		
-
-		
+	
 	}
 }
