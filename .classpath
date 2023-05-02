@@ -7,20 +7,20 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Anujit/Documents/mysql-connector-j-8.0.33/mysql-connector-j-8.0.33.jar"/>
-	<classpathentry kind="lib" path="src/pack/bbct.jpg"/>
-	<classpathentry kind="lib" path="src/pack/ttimg.jpg"/>
-	<classpathentry kind="lib" path="src/pack/ttct.jpg"/>
-	<classpathentry kind="lib" path="src/pack/sports1.jpg"/>
-	<classpathentry kind="lib" path="src/pack/sking.jpg"/>
-	<classpathentry kind="lib" path="src/pack/pexels-tom-fisk-3448250.jpg"/>
-	<classpathentry kind="lib" path="src/pack/ltimg.jpg"/>
-	<classpathentry kind="lib" path="src/pack/ltct.jpg"/>
-	<classpathentry kind="lib" path="src/pack/image1(1).jpg"/>
-	<classpathentry kind="lib" path="src/pack/home.png"/>
-	<classpathentry kind="lib" path="src/pack/ftimg.jpg"/>
-	<classpathentry kind="lib" path="src/pack/ftct.jpg"/>
-	<classpathentry kind="lib" path="src/pack/bbimg.jpg"/>
-	<classpathentry kind="lib" path="src/pack/basketball_court.jpg"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/bbct.jpg"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/ttimg.jpg"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/ttct.jpg"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/sports1.jpg"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/sking.jpg"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/pexels-tom-fisk-3448250.jpg"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/ltimg.jpg"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/ltct.jpg"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/image1(1).jpg"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/home.png"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/ftimg.jpg"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/ftct.jpg"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/bbimg.jpg"/>
+	<classpathentry exported="true" kind="lib" path="src/pack/basketball_court.jpg"/>
 	<classpathentry kind="var" path="ECLIPSE_HOME/eclipsec.exe"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
