@@ -44,7 +44,7 @@ public class REGISTERPOP {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 588, 436);
+		frame.setBounds(900, 150, 588, 436);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -64,29 +64,29 @@ public class REGISTERPOP {
 		panel.add(lblNewLabel_1);
 		
 		textField = new JTextField();
-		textField.setBounds(240, 71, 190, 39);
+		textField.setBounds(281, 71, 190, 39);
 		panel.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(240, 159, 190, 39);
+		textField_1.setBounds(281, 161, 190, 39);
 		panel.add(textField_1);
 		textField_1.setColumns(10);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("SUBMIT");
 		btnNewButton.setBounds(109, 346, 120, 32);
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("New button");
+		JButton btnNewButton_1 = new JButton("CANCEL");
 		btnNewButton_1.setBounds(343, 346, 128, 32);
 		panel.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("CONFIRM PASSWORD");
-		lblNewLabel_2.setBounds(72, 247, 128, 32);
+		lblNewLabel_2.setBounds(72, 244, 157, 39);
 		panel.add(lblNewLabel_2);
 		
 		textField_2 = new JTextField();
-		textField_2.setBounds(240, 242, 190, 39);
+		textField_2.setBounds(281, 244, 190, 39);
 		panel.add(textField_2);
 		textField_2.setColumns(10);
 	}
