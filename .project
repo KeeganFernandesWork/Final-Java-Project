@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>Sports-venue</name>
+	<name>Sports-venue-system</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -14,56 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/pack/bbct.jpg</name>
-			<type>1</type>
-			<location>C:/Users/Anujit/Desktop/New folder/bbct.jpg</location>
-		</link>
-		<link>
-			<name>src/pack/bbimg.jpg</name>
-			<type>1</type>
-			<location>C:/Users/Anujit/Desktop/New folder/bbimg.jpg</location>
-		</link>
-		<link>
-			<name>src/pack/ftct.jpg</name>
-			<type>1</type>
-			<location>C:/Users/Anujit/Desktop/New folder/ftct.jpg</location>
-		</link>
-		<link>
-			<name>src/pack/ftimg.jpg</name>
-			<type>1</type>
-			<location>C:/Users/Anujit/Desktop/New folder/ftimg.jpg</location>
-		</link>
-		<link>
-			<name>src/pack/ltct.jpg</name>
-			<type>1</type>
-			<location>C:/Users/Anujit/Desktop/New folder/ltct.jpg</location>
-		</link>
-		<link>
-			<name>src/pack/ltimg.jpg</name>
-			<type>1</type>
-			<location>C:/Users/Anujit/Desktop/New folder/ltimg.jpg</location>
-		</link>
-		<link>
-			<name>src/pack/pexels-tom-fisk-3448250.jpg</name>
-			<type>1</type>
-			<location>C:/Users/Anujit/Downloads/pexels-tom-fisk-3448250.jpg</location>
-		</link>
-		<link>
-			<name>src/pack/sports1.jpg</name>
-			<type>1</type>
-			<location>C:/Users/Anujit/Downloads/sports1.jpg</location>
-		</link>
-		<link>
-			<name>src/pack/ttct.jpg</name>
-			<type>1</type>
-			<location>C:/Users/Anujit/Desktop/New folder/ttct.jpg</location>
-		</link>
-		<link>
-			<name>src/pack/ttimg.jpg</name>
-			<type>1</type>
-			<location>C:/Users/Anujit/Desktop/New folder/ttimg.jpg</location>
-		</link>
-	</linkedResources>
 </projectDescription>
