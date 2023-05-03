@@ -1,6 +1,7 @@
 package pack;
 
 import java.awt.*;
+import java.awt.Window.Type;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -42,6 +43,8 @@ public class VENUEPOP {
 		frame.setBounds(0, 0, 743, 538);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false);
+		frame.setType(Type.UTILITY);
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 729, 501);
