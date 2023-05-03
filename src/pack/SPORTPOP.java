@@ -2,6 +2,7 @@ package pack;
 
 import java.awt.EventQueue;
 import java.awt.Image;
+import java.awt.Window.Type;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -41,6 +42,9 @@ public class SPORTPOP {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(0, 0, 743, 538);
+
+		frame.setResizable(false);
+		frame.setType(Type.UTILITY);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
