@@ -6,17 +6,18 @@ import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.BorderLayout;
+//import java.awt.BorderLayout;
 import javax.swing.JLayeredPane;
 import javax.swing.JLabel;
-import java.awt.FlowLayout;
+//import java.awt.FlowLayout;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import java.awt.Window.Type;
+//import java.awt.Window.Type;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
 public class Newframe extends JFrame {
 
@@ -136,6 +137,13 @@ public class Newframe extends JFrame {
 		panel_1.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("REGISTER");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				REGISTERPOP rg = new REGISTERPOP();
+				rg.register();
+			}
+		});
 		btnNewButton_1.setBackground(new Color(128, 128, 64));
 		btnNewButton_1.setBounds(116, 208, 109, 21);
 		panel_1.add(btnNewButton_1);
@@ -217,5 +225,20 @@ public class Newframe extends JFrame {
 		btnNewButton_3.setToolTipText("A list of all the sports events");
 		btnNewButton_3.setBounds(66,170,273,150);
 		panel_3.add(btnNewButton_3);
+		
+		//DataBase Connection
+		   try {
+			   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "1234");//Establishing connection
+			   System.out.println("Connected With the database successfully");
+			   Statement stmt=con.createStatement();  
+			   ResultSet rs=stmt.executeQuery("select * from users"); 
+			   while(rs.next()) {
+				   System.out.println("Rno "+rs.getInt(1)+" username "+rs.getString(2)+" password "+rs.getString(3)+" Access "+rs.getString(4));
+			   }
+			   con.close();  
+			   } 
+		   catch (SQLException e) {
+			   System.out.println("Error while connecting to the database");
+			   }
 	}
 }
