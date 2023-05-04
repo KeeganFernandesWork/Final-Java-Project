@@ -96,9 +96,6 @@ public class Newframe extends JFrame {
 		
 		//Login and register labels and textFields
 		
-		//creating the mysql connector class
-		mysqlconnect con = new mysqlconnect();
-		
 		//Login --
 		
 		JLabel lblNewLabel_1 = new JLabel("LOGIN :");
@@ -131,13 +128,8 @@ public class Newframe extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//going to Login Page
-//				checking weather the username and password are correct
-				boolean check = con.loginCheck(textField.getText(), textField_1.getText());
-				if(check) {
-
-					Login lg = new Login();
-					lg.newScreen1();	
-				}
+				Login lg = new Login();
+				lg.newScreen1();
 			}
 		});
 		btnNewButton.setBackground(new Color(128, 128, 64));
@@ -147,6 +139,7 @@ public class Newframe extends JFrame {
 		JButton btnNewButton_1 = new JButton("REGISTER");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				REGISTERPOP rg = new REGISTERPOP();
 				rg.register();
 			}
@@ -233,8 +226,19 @@ public class Newframe extends JFrame {
 		btnNewButton_3.setBounds(66,170,273,150);
 		panel_3.add(btnNewButton_3);
 		
-//		//DataBase Connection
-//		mysqlconnect con = new mysqlconnect();
-//		System.out.println(con.loginCheck("Keegan", "fernandes"));
+		//DataBase Connection
+		   try {
+			   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "1234");//Establishing connection
+			   System.out.println("Connected With the database successfully");
+			   Statement stmt=con.createStatement();  
+			   ResultSet rs=stmt.executeQuery("select * from users"); 
+			   while(rs.next()) {
+				   System.out.println("Rno "+rs.getInt(1)+" username "+rs.getString(2)+" password "+rs.getString(3)+" Access "+rs.getString(4));
+			   }
+			   con.close();  
+			   } 
+		   catch (SQLException e) {
+			   System.out.println("Error while connecting to the database");
+			   }
 	}
 }
