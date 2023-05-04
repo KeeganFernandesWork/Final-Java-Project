@@ -58,6 +58,8 @@ public class Newframe extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		//Setting up the content pane
+		// adding mysql connector
+		mysqlconnect con = new mysqlconnect();
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -99,9 +101,6 @@ public class Newframe extends JFrame {
 		panel_1.setLayout(null);
 		
 		//Login and register labels and textFields
-		
-		//creating the mysql connector class
-		mysqlconnect con = new mysqlconnect();
 		
 		//Login --
 		
@@ -154,6 +153,7 @@ public class Newframe extends JFrame {
 		JButton btnNewButton_1 = new JButton("REGISTER");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				REGISTERPOP rg = new REGISTERPOP();
 				rg.register();
 			}
@@ -239,9 +239,5 @@ public class Newframe extends JFrame {
 		btnNewButton_3.setToolTipText("A list of all the sports events");
 		btnNewButton_3.setBounds(66,170,273,150);
 		panel_3.add(btnNewButton_3);
-		
-//		//DataBase Connection
-//		mysqlconnect con = new mysqlconnect();
-//		System.out.println(con.loginCheck("Keegan", "fernandes"));
 	}
 }
