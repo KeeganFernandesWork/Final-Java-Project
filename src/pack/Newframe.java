@@ -8,12 +8,15 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 //import java.awt.BorderLayout;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 //import java.awt.FlowLayout;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+
 //import java.awt.Window.Type;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -51,6 +54,7 @@ public class Newframe extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1397,685);
 		contentPane = new JPanel();
+
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		//Setting up the content pane
@@ -137,6 +141,9 @@ public class Newframe extends JFrame {
 
 					Login lg = new Login();
 					lg.newScreen1();	
+				}
+				else {
+					JOptionPane.showMessageDialog(panel,"Username or Password Do Not Match");
 				}
 			}
 		});
