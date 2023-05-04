@@ -3,7 +3,8 @@ package pack;
 import java.sql.*;
 
 public class mysqlconnect {
-Connection con;
+	//adds the connection to the table
+Connection con;// this is the connection that will be used for the java file
 mysqlconnect() {
    try {
 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "fernandes", "hello");//Establishing connection
@@ -14,6 +15,7 @@ System.out.println("Error while connecting to the database "+e.getMessage());
 }
 }
 boolean loginCheck(String name, String pass) {
+	//checks the username and password
 	   try {
 		   Connection con = this.con;
 		   Statement stmt=con.createStatement();  
@@ -31,6 +33,7 @@ boolean loginCheck(String name, String pass) {
 	   return false;
 }
 boolean registerLog(String name, String pass) {
+	// adds the username and password to the table
 	   try {
 		   Connection con = this.con;
 		   Statement stmt=con.createStatement();  
@@ -51,6 +54,7 @@ boolean registerLog(String name, String pass) {
 	   return false;
 }
 boolean registerCheck(String name) {
+	// checks weather the username is available
 	   try {
 		   Connection con = this.con;
 		   Statement stmt=con.createStatement();  
