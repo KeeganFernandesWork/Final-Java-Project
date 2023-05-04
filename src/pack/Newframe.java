@@ -8,12 +8,15 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 //import java.awt.BorderLayout;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JLabel;
 //import java.awt.FlowLayout;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+
 //import java.awt.Window.Type;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -51,9 +54,12 @@ public class Newframe extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1397,685);
 		contentPane = new JPanel();
+
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		//Setting up the content pane
+		// adding mysql connector
+		mysqlconnect con = new mysqlconnect();
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -128,8 +134,16 @@ public class Newframe extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//going to Login Page
-				Login lg = new Login();
-				lg.newScreen1();
+//				checking weather the username and password are correct
+				boolean check = con.loginCheck(textField.getText(), textField_1.getText());
+				if(check) {
+
+					Login lg = new Login();
+					lg.newScreen1();	
+				}
+				else {
+					JOptionPane.showMessageDialog(panel,"Username or Password Do Not Match");
+				}
 			}
 		});
 		btnNewButton.setBackground(new Color(128, 128, 64));
@@ -225,20 +239,5 @@ public class Newframe extends JFrame {
 		btnNewButton_3.setToolTipText("A list of all the sports events");
 		btnNewButton_3.setBounds(66,170,273,150);
 		panel_3.add(btnNewButton_3);
-		
-		//DataBase Connection
-		   try {
-			   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project", "root", "1234");//Establishing connection
-			   System.out.println("Connected With the database successfully");
-			   Statement stmt=con.createStatement();  
-			   ResultSet rs=stmt.executeQuery("select * from users"); 
-			   while(rs.next()) {
-				   System.out.println("Rno "+rs.getInt(1)+" username "+rs.getString(2)+" password "+rs.getString(3)+" Access "+rs.getString(4));
-			   }
-			   con.close();  
-			   } 
-		   catch (SQLException e) {
-			   System.out.println("Error while connecting to the database");
-			   }
 	}
 }
