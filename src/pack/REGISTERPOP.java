@@ -7,6 +7,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -83,20 +84,7 @@ public class REGISTERPOP {
 			public void actionPerformed(ActionEvent e) {
 					boolean text = true;
 					if(!textField_1.getText().equals(textField_2.getText())) {
-			            JDialog d = new JDialog(frame,"Confirmation does not match the password");
-			            
-			            // create a label
-			            JLabel l = new JLabel("Confirmation does not match the password");
-			            l.setBounds(72, 161, 157, 39);
-			            l.setSize(100,180);
-			            d.add(l);
-			 
-			            // setsize of dialog
-			            d.setSize(150, 200);
-			            d.setBounds(240, 71, 190, 39);
-			 
-			            // set visibility of dialog
-			            d.setVisible(true);
+						JOptionPane.showMessageDialog(frame,"Both the passwords do not match");
 			            text = false;
 					}
 					boolean check = con.registerCheck(textField.getText());
@@ -105,12 +93,20 @@ public class REGISTERPOP {
 						System.out.println("value added succesfully");
 						frame.dispose();
 					}
+					else {
+						JOptionPane.showMessageDialog(frame,"Invalid Username");
+			            text = false;
+					}
 			}
 		});
 		btnNewButton.setBounds(109, 346, 120, 32);
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("New button");
+		JButton btnNewButton_1 = new JButton("Cancel");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();			}
+		});
 		btnNewButton_1.setBounds(343, 346, 128, 32);
 		panel.add(btnNewButton_1);
 		
