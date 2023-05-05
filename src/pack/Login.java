@@ -32,11 +32,11 @@ public class Login extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void newScreen1() {
+	public static void newScreen1(String name,String access) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Login frame = new Login();
+					Login frame = new Login(name,access);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,7 +48,7 @@ public class Login extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Login() {
+	public Login(String name,String access) {
 		setTitle("new name");
 		setResizable(false);
 		setType(Type.UTILITY);
@@ -95,7 +95,7 @@ public class Login extends JFrame {
 		panel_2.setLayout(null);
 		
 		//Label for Menu Bar text
-		String User = "Keegan";
+		String User = name;
 		JLabel lblNewLabel_3 = new JLabel("Welcome "+User);
 		lblNewLabel_3.setForeground(new Color(0, 0, 0));
 		lblNewLabel_3.setFont(new Font("Monotype corsiva", Font.PLAIN, 36));
