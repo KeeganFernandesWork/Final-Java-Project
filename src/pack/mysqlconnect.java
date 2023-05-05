@@ -32,6 +32,27 @@ boolean loginCheck(String name, String pass) {
 		   }
 	   return false;
 }
+String[] loginGet(String name, String pass) {
+	//checks the username and password
+	String[] ls = new String[2];
+	   try {
+		   Connection con = this.con;
+		   Statement stmt=con.createStatement();  
+		   ResultSet rs=stmt.executeQuery("select * from users"); 
+		   while(rs.next()) {
+		   	   if(rs.getString(2).equals(name)) {
+		   		   if(rs.getString(3).equals(pass)) {
+		   			   ls[0] = rs.getString(2);
+		   			   ls[1] = rs.getString(4);
+		   			   return ls;
+		   		   }
+		   	   }
+		   }
+		   } catch (SQLException e) {
+		   System.out.println("Error while connecting to the database "+e.getMessage());
+		   }
+	   return ls;
+}
 boolean registerLog(String name, String pass) {
 	// adds the username and password to the table
 	   try {

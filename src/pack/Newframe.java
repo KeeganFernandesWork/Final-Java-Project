@@ -20,6 +20,7 @@ import javax.swing.JDialog;
 //import java.awt.Window.Type;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.security.AlgorithmConstraints;
 import java.sql.*;
 
 public class Newframe extends JFrame {
@@ -58,8 +59,6 @@ public class Newframe extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		//Setting up the content pane
-		// adding mysql connector
-		mysqlconnect con = new mysqlconnect();
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -102,6 +101,9 @@ public class Newframe extends JFrame {
 		
 		//Login and register labels and textFields
 		
+		//creating the mysql connector class
+		mysqlconnect con = new mysqlconnect();
+		
 		//Login --
 		
 		JLabel lblNewLabel_1 = new JLabel("LOGIN :");
@@ -135,11 +137,13 @@ public class Newframe extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				//going to Login Page
 //				checking weather the username and password are correct
-				boolean check = con.loginCheck(textField.getText(), textField_1.getText());
+				String name = textField.getText();
+				String pass = textField_1.getText();
+				boolean check = con.loginCheck(name, pass);
 				if(check) {
-
-					Login lg = new Login();
-					lg.newScreen1();	
+					String[] levels = con.loginGet(name,pass);
+					Login lg = new Login(levels[0],levels[1]);
+					lg.newScreen1(levels[0],levels[1]);	
 				}
 				else {
 					JOptionPane.showMessageDialog(panel,"Username or Password Do Not Match");
@@ -153,7 +157,6 @@ public class Newframe extends JFrame {
 		JButton btnNewButton_1 = new JButton("REGISTER");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
 				REGISTERPOP rg = new REGISTERPOP();
 				rg.register();
 			}
@@ -239,5 +242,9 @@ public class Newframe extends JFrame {
 		btnNewButton_3.setToolTipText("A list of all the sports events");
 		btnNewButton_3.setBounds(66,170,273,150);
 		panel_3.add(btnNewButton_3);
+		
+//		//DataBase Connection
+//		mysqlconnect con = new mysqlconnect();
+//		System.out.println(con.loginCheck("Keegan", "fernandes"));
 	}
 }
