@@ -50,6 +50,7 @@ public class LOGINPOP {
 		frame.getContentPane().setLayout(null);
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 602, 593);
+		panel.setBackground(new Color(122,149,152));
 		panel.setLayout(null);
 		
 		ImageIcon icon2 = new ImageIcon(Newframe.class.getResource("home.png"));
@@ -63,7 +64,7 @@ public class LOGINPOP {
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_2 = new JLabel("Set date");
-		lblNewLabel_2.setBounds(25, 400, 165, 41);
+		lblNewLabel_2.setBounds(25, 400, 229, 41);
 		panel.add(lblNewLabel_2);
 		UtilDateModel model = new UtilDateModel();
 		//model.setDate(20,04,2014);
@@ -83,11 +84,11 @@ public class LOGINPOP {
 		lblNewLabel_3.setBounds(0, 159, 602, 149);
 		panel.add(lblNewLabel_3);
 		
-		JButton btnNewButton = new JButton("New button");
+		JButton btnNewButton = new JButton("Book");
 		btnNewButton.setBounds(374, 500, 165, 30);
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("New button");
+		JButton btnNewButton_1 = new JButton("Check Availability");
 		btnNewButton_1.setBounds(25, 500, 165, 30);
 		panel.add(btnNewButton_1);
 		
