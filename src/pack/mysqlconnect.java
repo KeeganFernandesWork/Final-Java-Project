@@ -92,5 +92,28 @@ boolean registerCheck(String name) {
 		   }
 	   return true;
 }
+String[] venueGet(int i) {
+	// gets the venue details
+	String[] venue_details = new String[4];
+	   try {
+		   Connection con = this.con;
+		   Statement stmt=con.createStatement();  
+		   ResultSet rs=stmt.executeQuery("select * from Venue"); 
+		   System.out.println("Collecting venues");
+		   while(rs.next()) {
+		   	   
+		   		   if(rs.getInt(1) == i) {
+		   			   venue_details[0] = rs.getString(2);
+		   			   venue_details[1] = rs.getString(3);
+		   			   venue_details[2] = rs.getString(4);
+		   			   venue_details[3] = Integer.toString(rs.getInt(5));
+		   		   
+		   	   }
+		   }
+		   } catch (SQLException e) {
+		   System.out.println("Error while connecting to the database "+e.getMessage());
+		   }
+	   return venue_details;
+}
  
 }

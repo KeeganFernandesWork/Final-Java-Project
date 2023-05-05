@@ -1,6 +1,7 @@
 package pack;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
@@ -50,21 +51,21 @@ public class LOGINPOP {
 		frame.getContentPane().setLayout(null);
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 602, 593);
-		panel.setBackground(new Color(122,149,152));
 		panel.setLayout(null);
+		String[] venue_des = con.venueGet(i);
 		
-		ImageIcon icon2 = new ImageIcon(Newframe.class.getResource("home.png"));
+		ImageIcon icon2 = new ImageIcon(Newframe.class.getResource(venue_des[2]));
 		Image image2 = icon2.getImage();
 		Image new2 = image2.getScaledInstance(65,65,java.awt.Image.SCALE_SMOOTH);
 		ImageIcon ima = new ImageIcon(new2);
 		
-		JLabel lblNewLabel = new JLabel("New label");
+		JLabel lblNewLabel = new JLabel(venue_des[0]);
 		lblNewLabel.setIcon(ima);
 		lblNewLabel.setBounds(0, 0, 602, 149);
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_2 = new JLabel("Set date");
-		lblNewLabel_2.setBounds(25, 400, 229, 41);
+		lblNewLabel_2.setBounds(25, 400, 165, 41);
 		panel.add(lblNewLabel_2);
 		UtilDateModel model = new UtilDateModel();
 		//model.setDate(20,04,2014);
@@ -79,16 +80,15 @@ public class LOGINPOP {
 		datePicker.setLocation(282, 400);
 		datePicker.setSize(262, 41);
 		
-		
-		JLabel lblNewLabel_3 = new JLabel("New label");
+		JLabel lblNewLabel_3 = new JLabel(venue_des[1]);
 		lblNewLabel_3.setBounds(0, 159, 602, 149);
 		panel.add(lblNewLabel_3);
 		
-		JButton btnNewButton = new JButton("Book");
+		JButton btnNewButton = new JButton("New button");
 		btnNewButton.setBounds(374, 500, 165, 30);
 		panel.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Check Availability");
+		JButton btnNewButton_1 = new JButton("New button");
 		btnNewButton_1.setBounds(25, 500, 165, 30);
 		panel.add(btnNewButton_1);
 		

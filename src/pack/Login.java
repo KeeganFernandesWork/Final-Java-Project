@@ -151,13 +151,7 @@ public class Login extends JFrame {
 		
 		
 		
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				//VENUEPOP vp = new VENUEPOP();
-				//vp.NewScreen();
-			}
-		});
+
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LOGINPOP lp = new LOGINPOP(1);
