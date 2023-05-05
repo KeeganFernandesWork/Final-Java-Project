@@ -1,0 +1,7 @@
+This is the final Java Project of Anujit Ghosh and Keegan Fernandes. In this project, we have created a "Sports Venue Booking System". If you are an organization/comittee/team, planning to book a venue for a sports event, this is the right place to be. We have connections with all the top-notch stadiums in town. We provide you a platform in which you are able to browse for different venues, various events, which can be conducted in the vicinity of these stadiums. You can get the details of every stadium and book according to your need. In the first page of our UI, you can get a view of all the stadiums and the events conducted in them, you have the option to log in using your user ID and password, or register if you're new . Once you log-in, a new page appears, which lets you choose between different venues, once you select a particular venue, a pop up appears which gives you a view of the particular venue and a brief description of it, you can check the date of availability and book it as per your preference of time. 
+
+All the details of the user are stored in a database, and are updated with every entry. There are multiple admins who log in to the system, with particular IDs and passwords. The admins have superior control over the platform, they can delete current bookings and thus update the database accordingly.
+
+The GUI is created using Java Swing,  the DataBase is SQL based, and the source code is in Java.
+
+Thankyou!
