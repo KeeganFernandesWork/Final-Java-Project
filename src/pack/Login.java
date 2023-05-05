@@ -32,11 +32,11 @@ public class Login extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void newScreen1(String name,String access) {
+	public static void newScreen1(String user, String access) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Login frame = new Login(name,access);
+					Login frame = new Login(user,access);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,7 +48,7 @@ public class Login extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Login(String name,String access) {
+	public Login(String user,String access) {
 		setTitle("new name");
 		setResizable(false);
 		setType(Type.UTILITY);
@@ -95,7 +95,7 @@ public class Login extends JFrame {
 		panel_2.setLayout(null);
 		
 		//Label for Menu Bar text
-		String User = name;
+		String User = user;
 		JLabel lblNewLabel_3 = new JLabel("Welcome "+User);
 		lblNewLabel_3.setForeground(new Color(0, 0, 0));
 		lblNewLabel_3.setFont(new Font("Monotype corsiva", Font.PLAIN, 36));
@@ -160,11 +160,8 @@ public class Login extends JFrame {
 		});
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				//Setting up a new pop-up frame for venue button
-			//	VENUEPOP vp = new VENUEPOP();
-				//vp.NewScreen();
-				
+				LOGINPOP lp = new LOGINPOP(1);
+				lp.lg(1);
 		}
 	});
 		btnNewButton_2.setToolTipText("A list of all the venues");
@@ -174,10 +171,8 @@ public class Login extends JFrame {
 		JButton btnNewButton_2_1 = new JButton(ima);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				//Setting up a new pop-up frame for venue button
-				//VENUEPOP vp = new VENUEPOP();
-				//vp.NewScreen();
+				LOGINPOP lp = new LOGINPOP(2);
+				lp.lg(2);
 				
 			}
 		});
@@ -188,10 +183,8 @@ public class Login extends JFrame {
 		JButton btnNewButton_2_2 = new JButton(ima);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				//Setting up a new pop-up frame for venue button
-				//VENUEPOP vp = new VENUEPOP();
-				//vp.NewScreen();
+				LOGINPOP lp = new LOGINPOP(3);
+				lp.lg(3);
 				
 			}
 		});
