@@ -216,7 +216,6 @@ public class Newframe extends JFrame {
 				//Setting up a new pop-up frame for venue button
 				VENUEPOP vp = new VENUEPOP();
 				vp.NewScreen();
-				
 			}
 		});
 		btnNewButton_2.setToolTipText("A list of all the venues");
