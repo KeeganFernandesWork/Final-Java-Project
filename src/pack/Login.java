@@ -1,6 +1,13 @@
 package pack;
 
 import java.awt.Color;
+import org.jfree.chart.ChartFactory;  
+import org.jfree.chart.ChartPanel;  
+import org.jfree.chart.JFreeChart;  
+import org.jfree.chart.plot.PlotOrientation;  
+import org.jfree.data.category.CategoryDataset;  
+import org.jfree.data.category.DefaultCategoryDataset;  
+import java.util.*;  
 import java.awt.EventQueue;
 
 import javax.swing.ImageIcon;
@@ -52,8 +59,8 @@ public class Login extends JFrame {
 		setTitle("new name");
 		setResizable(false);
 		setType(Type.UTILITY);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1397,685);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 1400,700);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -63,34 +70,50 @@ public class Login extends JFrame {
 		//Setting up the layered pane
 		
 		JLayeredPane layeredPane = new JLayeredPane();
-		layeredPane.setBounds(0, 0, 1397, 685);
+		layeredPane.setBounds(0, 0, 1400, 700);
 		contentPane.add(layeredPane);
+		layeredPane.setLayout(null);
 		
 		//Panel for image(Layer 0)  panel
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 1407, 685);
+		panel.setBounds(0, 0, 1400, 700);
 		layeredPane.add(panel);
 		panel.setLayout(null);
 		
 		//Getting the image, resizing it to the size of the panel, and adding it to the label
 		
 		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setForeground(new Color(255, 0, 128));
 		ImageIcon ima = new ImageIcon(Newframe.class.getResource("/pack/basketball_court.jpg"));
 		Image image = ima.getImage();
 		Image newi = image.getScaledInstance(1397,685,java.awt.Image.SCALE_SMOOTH);
 		ima = new ImageIcon(newi);
+		if(access.equals("admin")) {
+		JButton btnNewButton_2_4 = new JButton("OVERVIEW");
+		btnNewButton_2_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Analytics ana = new Analytics();
+				ana.analyze();
+			}
+		});
+		btnNewButton_2_4.setForeground(new Color(255, 255, 255));
+		btnNewButton_2_4.setBackground(new Color(128, 64, 0));
+		btnNewButton_2_4.setBounds(70, 476, 235, 46);
+		panel.add(btnNewButton_2_4);
+		}
+		
 		lblNewLabel.setIcon(ima);
-		lblNewLabel.setBounds(0, 10, 1394, 644);
+		lblNewLabel.setBounds(0, -12, 1400, 679);
 		
 		
 		//setting the toolbar
 		panel.add(lblNewLabel);
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(176,196,222,100));
-		layeredPane.setLayer(panel_2, 2);
-		panel_2.setOpaque(true);
 		panel_2.setBounds(0, 0, 1387, 65);
+		panel_2.setBackground(new Color(176,196,222,100));
+		layeredPane.setLayer(panel_2, 1);
+		panel_2.setOpaque(true);
 		layeredPane.add(panel_2);
 		panel_2.setLayout(null);
 		
@@ -125,72 +148,116 @@ public class Login extends JFrame {
 		
 		//Making the panel3
 		JPanel panel_3 = new JPanel();
-		layeredPane.setLayer(panel_3, 3);
-		panel_3.setBounds(23, 150, 1283, 366);
+		panel_3.setBounds(23, 150, 1283, 261);
+		layeredPane.setLayer(panel_3, 2);
 		panel_3.setOpaque(false);
 		layeredPane.add(panel_3);
 		
 		//Button for list of possible bookings
 		
-		ImageIcon icon1 = new ImageIcon(Newframe.class.getResource("sking.jpg"));
+		ImageIcon icon1 = new ImageIcon(Newframe.class.getResource("ftimg.jpg"));
 		Image image1 = icon1.getImage();
 		Image new1 = image1.getScaledInstance(273,132,java.awt.Image.SCALE_SMOOTH);
 		ima = new ImageIcon(new1);
-		panel_3.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5)); 
 		
-		Image image3 = icon1.getImage();
-		new2 = image3.getScaledInstance(273,132,java.awt.Image.SCALE_SMOOTH);
-		ima = new ImageIcon(new2);
 		JButton btnNewButton_2 = new JButton(ima);
-		
-		
-		//Don't do this, create a new swing application window, for pop-up, and then call it in your button , ovveriding the class
-		// in that way, you can deactivate the exit on close(just comment it out), so when you close your frame, all the frames 
-		// don't close along with it. Remember that you can only change the variables that you get from the user through imput, but 
-		// a single frame will carry with it, it's characteristics, like it ability to exit on close, etc.
-		
-		
-		
-		btnNewButton_2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				//VENUEPOP vp = new VENUEPOP();
-				//vp.NewScreen();
-			}
-		});
+		btnNewButton_2.setBounds(651, 19, 273, 132);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				LOGINPOP lp = new LOGINPOP(1);
-				lp.lg(1);
+				LOGINPOP lp = new LOGINPOP(1,user,access);
+				lp.lg(1,user,access);
 		}
 	});
+		panel_3.setLayout(null);
 		btnNewButton_2.setToolTipText("A list of all the venues");
-		btnNewButton_2.setBounds(66, 10, 273, 132);
 		panel_3.add(btnNewButton_2);
 		
+		ImageIcon icon3 = new ImageIcon(Newframe.class.getResource("bbimg.jpg"));
+		Image image3 = icon3.getImage();
+		Image new3 = image3.getScaledInstance(273,132,java.awt.Image.SCALE_SMOOTH);
+		ima = new ImageIcon(new3);
+		
 		JButton btnNewButton_2_1 = new JButton(ima);
-		btnNewButton_2.addActionListener(new ActionListener() {
+		btnNewButton_2_1.setBounds(960, 19, 273, 132);
+		btnNewButton_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				LOGINPOP lp = new LOGINPOP(2);
-				lp.lg(2);
+				LOGINPOP lp = new LOGINPOP(3,user,access);
+				lp.lg(3,user,access);
 				
 			}
 		});
-		btnNewButton_2.setToolTipText("A list of all the venues");
-		btnNewButton_2.setBounds(66, 10, 273, 132);
+		btnNewButton_2_1.setToolTipText("A list of all the venues");
 		panel_3.add(btnNewButton_2_1);
 		
+		ImageIcon icon4 = new ImageIcon(Newframe.class.getResource("ttimg.jpg"));
+		Image image4 = icon4.getImage();
+		Image new4 = image4.getScaledInstance(273,132,java.awt.Image.SCALE_SMOOTH);
+		ima = new ImageIcon(new4);
+		
 		JButton btnNewButton_2_2 = new JButton(ima);
-		btnNewButton_2.addActionListener(new ActionListener() {
+		btnNewButton_2_2.setBounds(31, 19, 273, 132);
+		btnNewButton_2_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				LOGINPOP lp = new LOGINPOP(3);
-				lp.lg(3);
+				LOGINPOP lp = new LOGINPOP(2,user,access);
+				lp.lg(2,user,access);
 				
 			}
 		});
-		btnNewButton_2.setToolTipText("A list of all the venues");
-		btnNewButton_2.setBounds(66, 10, 273, 132);
+		btnNewButton_2_2.setToolTipText("A list of all the venues");
 		panel_3.add(btnNewButton_2_2);
-	
+		
+		ImageIcon icon5 = new ImageIcon(Newframe.class.getResource("ltimg.jpg"));
+		Image image5 = icon5.getImage();
+		Image new5 = image5.getScaledInstance(273,132,java.awt.Image.SCALE_SMOOTH);
+		ima = new ImageIcon(new5);
+		
+		JButton btnNewButton_2_3 = new JButton(ima);
+		btnNewButton_2_3.setBounds(344, 19, 273, 132);
+		btnNewButton_2_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LOGINPOP lp = new LOGINPOP(4,user,access);
+				lp.lg(4,user,access);
+				
+			}
+		});
+		btnNewButton_2_3.setToolTipText("A list of all the venues");
+		panel_3.add(btnNewButton_2_3);
+		
+		JLabel lblNewLabel_1 = new JLabel("      FootBall venues booking and availability");
+		lblNewLabel_1.setForeground(new Color(255, 0, 128));
+		lblNewLabel_1.setOpaque(true);
+		lblNewLabel_1.setBackground(new Color(255, 255, 255,30));
+		lblNewLabel_1.setFont(new Font("Adobe Caslon Pro", Font.PLAIN, 14));
+		lblNewLabel_1.setBounds(31, 164, 273, 39);
+		panel_3.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("      LawnTennis venues booking and availability");
+		lblNewLabel_2.setForeground(new Color(255, 0, 128));
+		lblNewLabel_2.setOpaque(true);
+		lblNewLabel_2.setBackground(new Color(255, 255, 255,30));
+		lblNewLabel_2.setFont(new Font("Adobe Caslon Pro", Font.PLAIN, 14));
+		lblNewLabel_2.setBounds(344, 164, 273, 39);
+		panel_3.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_6 = new JLabel("      TableTennis venues booking and availability");
+		lblNewLabel_6.setForeground(new Color(255, 0, 128));
+		lblNewLabel_6.setOpaque(true);
+		lblNewLabel_6.setBackground(new Color(255, 255, 255,30));
+		lblNewLabel_6.setFont(new Font("Adobe Caslon Pro", Font.PLAIN, 14));
+		lblNewLabel_6.setBounds(651, 164, 273, 39);
+		panel_3.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("      Basketball venues booking and availability");
+		lblNewLabel_7.setForeground(new Color(255, 0, 128));
+		lblNewLabel_7.setOpaque(true);
+		lblNewLabel_7.setBackground(new Color(255, 255, 255,30));
+		lblNewLabel_7.setFont(new Font("Adobe Caslon Pro", Font.PLAIN, 14));
+		lblNewLabel_7.setBounds(960, 164, 273, 39);
+		panel_3.add(lblNewLabel_7);
+		
+
+
+		
+		
 	}
 }

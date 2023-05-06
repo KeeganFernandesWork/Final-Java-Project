@@ -90,7 +90,6 @@ public class REGISTERPOP {
 					boolean check = con.registerCheck(textField.getText());
 					if(check && text) {
 						con.registerLog(textField.getText(),textField_1.getText());
-						System.out.println("value added succesfully");
 						frame.dispose();
 					}
 					else {

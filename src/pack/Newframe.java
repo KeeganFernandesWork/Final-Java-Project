@@ -2,6 +2,7 @@ package pack;
 
 import java.awt.EventQueue;
 
+
 import java.awt.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -53,7 +54,7 @@ public class Newframe extends JFrame {
 		setResizable(false);
 		setType(Type.UTILITY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1397,685);
+		setBounds(100, 100, 1400,700);
 		contentPane = new JPanel();
 
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -66,13 +67,13 @@ public class Newframe extends JFrame {
 		//Setting up the layered pane
 		
 		JLayeredPane layeredPane = new JLayeredPane();
-		layeredPane.setBounds(0, 0, 1397, 685);
+		layeredPane.setBounds(0, 0, 1400, 700);
 		contentPane.add(layeredPane);
 		
 		//Panel for image(Layer 0)
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 1407, 685);
+		panel.setBounds(0, 0, 1400, 685);
 		layeredPane.add(panel);
 		panel.setLayout(null);
 		
@@ -201,7 +202,7 @@ public class Newframe extends JFrame {
 		
 		JPanel panel_3 = new JPanel();
 		layeredPane.setLayer(panel_3, 3);
-		panel_3.setBounds(117, 150, 582, 320);
+		panel_3.setBounds(117, 128, 582, 395);
 		panel_3.setOpaque(false);
 		layeredPane.add(panel_3);
 		panel_3.setLayout(null);
@@ -222,7 +223,7 @@ public class Newframe extends JFrame {
 			}
 		});
 		btnNewButton_2.setToolTipText("A list of all the venues");
-		btnNewButton_2.setBounds(66, 0, 273, 132);
+		btnNewButton_2.setBounds(66, 10, 273, 132);
 		panel_3.add(btnNewButton_2);
 		
 		//Button for events list
@@ -239,8 +240,20 @@ public class Newframe extends JFrame {
 			}
 		});
 		btnNewButton_3.setToolTipText("A list of all the sports events");
-		btnNewButton_3.setBounds(66,170,273,150);
+		btnNewButton_3.setBounds(66,193,273,150);
 		panel_3.add(btnNewButton_3);
+		
+		JLabel lblNewLabel_5 = new JLabel("               A List of all the Venues");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_5.setForeground(new Color(255, 255, 255));
+		lblNewLabel_5.setBounds(66, 152, 273, 23);
+		panel_3.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("           A List of all the Sports Events");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_6.setForeground(new Color(255, 255, 255));
+		lblNewLabel_6.setBounds(66, 353, 273, 32);
+		panel_3.add(lblNewLabel_6);
 		
 //		//DataBase Connection
 //		mysqlconnect con = new mysqlconnect();

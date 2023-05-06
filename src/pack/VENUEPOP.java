@@ -40,7 +40,7 @@ public class VENUEPOP {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(0, 0, 743, 538);
+		frame.setBounds(450, 200, 743, 538);
 		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setResizable(false);
